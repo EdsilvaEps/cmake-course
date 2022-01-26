@@ -1,0 +1,5 @@
+/home/edson/Documents/cmake_tutorials/module2/my_build_dir/CMakeFiles/rebuild_cache.dir
+/home/edson/Documents/cmake_tutorials/module2/my_build_dir/CMakeFiles/edit_cache.dir
+/home/edson/Documents/cmake_tutorials/module2/my_build_dir/CMakeFiles/my_print.dir
+/home/edson/Documents/cmake_tutorials/module2/my_build_dir/CMakeFiles/calculator.dir
+/home/edson/Documents/cmake_tutorials/module2/my_build_dir/CMakeFiles/my_math.dir
