@@ -198,3 +198,6 @@ print_detail_macro(Charlie)
 # my name is Charlie
 
 #Cmake is case insensitive
+
+########### CURRENT DIR #####
+message(${CMAKE_CURRENT_SOURCE_DIR})
