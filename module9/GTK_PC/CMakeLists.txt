@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.0)
 
 project(GTK_PC)
 
-find_package(PkgConfig REQUIRED)
+find_package(PkgConfig REQUIRED) # adding the PkgConfig module to this CMakeLists.txt
 
 # checks for the package and uses the first available
 # pkg_check_modules(<libkeyword> MODE lib)
@@ -22,9 +22,27 @@ if(PKG_CONFIG_FOUND)
 
     add_executable(${PROJECT_NAME}_app main.cpp)
 
-    target_include_directories(${PROJECT_NAME}_app PRIVATE ${GTK3_INCLUDE_DIRS})
+    target_include_directories(${PROJECT_NAME}_app PRIVATE ${GTK3_INCLUDE_DIRS}) # INCLUDE_DIRS could also be the link to the path
 
-    target_link_libraries(${PROJECT_NAME}_app PRIVATE ${GTK3_LIBRARIES})
+    target_link_libraries(${PROJECT_NAME}_app PRIVATE ${GTK3_LIBRARIES}) # LIBRARIES could also be the link to the path
 else()
     message("Could not find PKG")
 endif()
+
+# command to search a lib on a number of possible paths
+# find_library(<VAR> <lib-name> <path1> <path2>...)
+# ex: find_library(abc_LIBRARY abc HINTS /home/edson/Downloads/abc)
+# ex: find_library(abc_LIBRARY abc HINTS /home/edson/Downloads/abc
+#               PATH_SUFIXES lib lib/abc-1.14) -> this adds new links with suffix lib and lib/abc-1.14
+# abc_LIBRARY = /home/edson/Downloads/abc/libabc.so
+#
+# find_path(<VAR> <lib-name> <path1> <path2>... <suffix1>...) -> find headers
+# find_path(abc_INCLUDE abc.h HINTS /home/edson/Downloads/abc)
+#
+# default location for find_library  search
+# /usr/lib
+# /usr/lib/x86_64-linux-gnu
+
+# default location for find_path
+# /usr/include
+# /usr/include/x86_64-linux-gnu
